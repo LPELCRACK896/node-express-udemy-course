@@ -13,6 +13,10 @@ connectDB()
 const bootcamps = require('./routes/bootcamps')
 
 const app = express()
+
+//Body Parser
+app.use(express.json()) //Sin esta linea, los controladores no acceden al req.body
+
 // Dev logging middlewares
 if(process.env.NODE_ENV == 'development') app.use(morgan('dev'))
 //Mount routes
